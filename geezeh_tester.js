@@ -1,5 +1,13 @@
-var traceur = require("./node_modules/traceur/bin/traceur");
+var traceur = require('traceur');
 traceur.experimental = true;
+
+traceur.require.makeDefault(function(filename) {
+  if (filename.indexOf("Geezeh.js") != -1) {
+    return true;
+  } else {
+    return false;
+  }
+});
 
 var Geezeh = require('./Geezeh.js');
 
